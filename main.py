@@ -5,18 +5,17 @@ from graph import Graph
 
 def read_cities(path):
     """
-    Read a CSV file and return a Graph object.
+    Read a TXT file and return a Graph object.
 
     Args:
-        path: The path to the CSV file.
+        path: The path to the TXT file.
 
     Returns:
-        A Graph object representing the data in the CSV file.
+        A Graph object representing the data in the TXT file.
     """
     graph = Graph()
     with open(path, "r") as file:
-        reader = csv.reader(file)
-        next(reader)  # Skip the header
+        reader = csv.reader(file, delimiter=",")
         for row in reader:
             graph.add_edge(row[0], row[1])
     return graph
