@@ -33,7 +33,6 @@ class Search:
                     if next_node == destination:
                         return path + [next_node]
                     visited.add(next_node)
-                    print(next_node, path + [next_node])
                     queue.append((next_node, path + [next_node]))
         return None
 
